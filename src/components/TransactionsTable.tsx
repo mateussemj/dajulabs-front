@@ -22,36 +22,36 @@ export default function TransactionsTable({ data }: Props) {
     <table style={{ borderCollapse: "collapse", width: "100%" }}>
       <thead>
         <tr>
-          <th style={headerStyle}>Invoice</th>
-          <th style={headerStyle}>Sale Product</th>
-          <th style={headerStyle}>Sale Company</th>
-          <th style={headerStyle}>Sale Value</th>
-          <th style={headerStyle}>Refund Product</th>
-          <th style={headerStyle}>Refund Company</th>
-          <th style={headerStyle}>Refund Value</th>
+          <th style={headerStyle}>Nota Fiscal</th>
+          <th style={headerStyle}>Produto Vendido</th>
+          <th style={headerStyle}>Empresa</th>
+          <th style={headerStyle}>Valor da Venda</th>
+          <th style={headerStyle}>Produto Retornado</th>
+          <th style={headerStyle}>Empresa</th>
+          <th style={headerStyle}>Valor do Retorno</th>
         </tr>
       </thead>
       <tbody>
-        {data.map(({ invoice, transacation }, index) => (
+        {data.map(({ invoice, transaction }, index) => (
           <tr key={index}>
             <td style={cellStyle}>{invoice}</td>
             <td style={{ ...cellStyle, backgroundColor: "lightgreen" }}>
-              {transacation.sale.product}
+              {transaction.sale.product}
             </td>
             <td style={{ ...cellStyle, backgroundColor: "lightgreen" }}>
-              {transacation.sale.company}
+              {transaction.sale.company}
             </td>
             <td style={{ ...cellStyle, backgroundColor: "lightgreen" }}>
-              {transacation.sale.value}
+              {transaction.sale.value}
             </td>
             <td style={{ ...cellStyle, backgroundColor: "lightcoral" }}>
-              {transacation.refund.product}
+              {transaction.refund.product}
             </td>
             <td style={{ ...cellStyle, backgroundColor: "lightcoral" }}>
-              {transacation.refund.company}
+              {transaction.refund.company}
             </td>
             <td style={{ ...cellStyle, backgroundColor: "lightcoral" }}>
-              {transacation.refund.value}
+              {transaction.refund.value}
             </td>
           </tr>
         ))}
