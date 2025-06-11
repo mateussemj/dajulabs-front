@@ -18,6 +18,10 @@ const cellStyle: React.CSSProperties = {
 };
 
 export default function TransactionsTable({ data }: Props) {
+  if (!data || data.length === 0) {
+    return <p style={{ textAlign: "center", marginTop: "20px" }}>Nenhum par de Venda e Devolução encontrado.</p>;
+  }
+
   return (
     <table style={{ borderCollapse: "collapse", width: "100%" }}>
       <thead>
