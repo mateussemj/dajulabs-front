@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TransactionsTable from "./components/TransactionsTable";
 import { fetchTransactions, InvoiceData } from "./api";
+import "./App.css";
 
 function App() {
   const [data, setData] = useState<InvoiceData[]>([]);
